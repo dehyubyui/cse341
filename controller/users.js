@@ -19,6 +19,6 @@ const getSingle = async (req, res) => {
 };
 
 
-module.exports = {
+module.export = {
     getAll, getSingle
 }
