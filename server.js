@@ -1,6 +1,6 @@
 const express = require('express');
 
-const mongodb = require('./data/connect');
+const mongodb = require('./database/connect.js');
 const app = express()
 
 const port = process.env.PORT || 3000;
@@ -17,5 +17,3 @@ mongodb.initDb((err) => {
 });
 
 
-//ROUTES
-app.use('/', require('./routes/index.js'))

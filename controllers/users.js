@@ -1,3 +1,4 @@
+const { ObjectId } = require('mongodb');
 const mongodb = require('../database/connect');
 const objectId = require('mongodb').ObjectId;
 
@@ -9,8 +10,9 @@ const getAll = async (req, res) => {
     });
 };
 
+
 const getSingle = async (req, res) => {
-    const userId = new objectId(req.params.id);
+    const userId = new ObjectId(req.params.id);
     const result = await mongodb.getDatabase().db('contacts').collection('users').find({ _id: userId });
     result.toArray().then((users) => {
         res.setHeader('Content-Type', 'application/json');
@@ -19,6 +21,6 @@ const getSingle = async (req, res) => {
 };
 
 
-module.export = {
+module.exports = {
     getAll, getSingle
 }

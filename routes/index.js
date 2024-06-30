@@ -1,7 +1,11 @@
-const router = require('express').Router();
+const express = require('express');
+const router = express.Router();
 
-router.get('/', (req, res) => {res.send('Hello World');});
+router.get('/', (req, res) => {
+  res.send('Hello World');
+});
 
-routes.use('/users', require('./users'));
+// Correctly use the router object to require and use the users router
+router.use('/users', require('./users'));
 
-module.export = routes;
+module.exports = router;
