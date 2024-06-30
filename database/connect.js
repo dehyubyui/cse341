@@ -1,4 +1,4 @@
-const dotenv = require('dotenv')
+const dotenv = require('dotenv');
 dotenv.config();
 
 
@@ -29,4 +29,7 @@ const getDatabase = () => {
 };
 
 
-module.exports = {initDb, getDatabase};
+module.exports = {
+    initDb, 
+    getDatabase
+};
